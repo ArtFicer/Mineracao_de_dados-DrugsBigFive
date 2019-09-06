@@ -1,0 +1,33 @@
+﻿Coeficiêntes Regressão Logística
+                        0         0
+0  Nscore  0.132447
+1  Escore -0.230190
+2  Oscore  2.635938
+3  Ascore -1.435449
+4  Cscore -1.132310
+5  BIS-11  1.983254
+6  ImpSS  -0.251329
+             Não Usuario  Usuario
+Não Usuario          331      128
+Usuario               72       33
+             Não Usuario  Usuario
+Não Usuario          286      173
+Usuario               32       73
+             Não Usuario   Usuario
+Não Usuario     0.114931  0.044444
+Usuario         0.025000  0.011458
+             Não Usuario   Usuario
+Não Usuario     0.099306  0.060069
+Usuario         0.011111  0.025347
+# ================================================================ #
+Classifier        Scores                 Acc       Std        Var
+Decision Tree:    [0.69 0.7  0.7 ]       0.70     0.0025     0.0000
+Log. Regression:  [0.67 0.63 0.65]       0.65     0.0174     0.0003
+# ================================================================ #
+# ================================================================ #
+Acurácia:
+Decision Tree:              0.65
+Logistic Regression:        0.64
+# ================================================================ #
+
+Process finished with exit code 0

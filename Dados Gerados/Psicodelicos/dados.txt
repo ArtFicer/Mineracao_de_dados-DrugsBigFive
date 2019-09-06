@@ -1,0 +1,34 @@
+Coeficiêntes Regressão Logística
+                        0         0
+0     AberturaExperiencia -0.177993
+1          Agradabilidade -1.514771
+2       Conscienciosidade  3.836052
+3             Extroversao -1.187704
+4  InstabilidadeEmocional -1.169472
+5    BuscaPorExperiencias  2.316708
+6           Impulsividade  0.267302
+             Não Usuario  Usuario
+Não Usuario          149      119
+Usuario              112      184
+             Não Usuario  Usuario
+Não Usuario          187       81
+Usuario               95      201
+             Não Usuario   Usuario
+Não Usuario     0.051736  0.041319
+Usuario         0.038889  0.063889
+             Não Usuario   Usuario
+Não Usuario     0.064931  0.028125
+Usuario         0.032986  0.069792
+# ================================================================ #
+Classifier        Scores                 Acc       Std        Var
+Decision Tree:    [0.62 0.63 0.57]       0.61     0.0254     0.0006
+Log. Regression:  [0.72 0.61 0.72]       0.68     0.0515     0.0027
+# ================================================================ #
+# ================================================================ #
+Acurácia:
+Decision Tree:              0.59
+Logistic Regression:        0.69
+# ================================================================ #
+
+Process finished with exit code 0
+
