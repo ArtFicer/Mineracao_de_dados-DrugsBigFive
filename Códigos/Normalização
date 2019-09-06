@@ -1,0 +1,89 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+
+"""
+
+# imports
+import pandas as pd
+import matplotlib.pyplot as pt
+import seaborn as sns
+
+sns.set()
+
+#dfo = pd.read_csv("/home/pedro/PycharmProjects/MD/venv/src/data/drug_consumption-Original .csv")
+# mostras que importou e cab com amostras
+
+
+# iloc/loc para filtras colunas
+
+#ver uma amostra dos dados
+#print(dfo.shape)
+
+
+#print(dfo.Age.value_counts())
+
+#sns.pairplot(dfo)
+#pt.savefig('img/pairplot.png', dpi=300)
+#pt.show()
+
+#dfo.Age.describe().plot(kind='bar')
+#pt.title('Distribuição de dorgardos por faixa etaria')
+#pt.ylabel('dorgados')
+#pt.xlabel('tempo  (anos)')
+#pt.savefig('img/dorgardos.png', dpi=300)
+#pt.show()
+
+
+df = pd.read_csv("/home/pedro/PycharmProjects/MD/venv/src/data/drug_consumption.csv") #carrega a base
+dfc = pd.read_csv("/home/pedro/PycharmProjects/MD/venv/src/data/drugs_consumption-copy.csv")
+#copia
+df
+dfc.loc[:,'NscoreCo'] = dfc['Nscore']
+dfc.loc[:,'EscoreCo'] = dfc['Escore']
+dfc.loc[:,'OscoreCo'] = dfc['Oscore']
+dfc.loc[:,'AscoreCo'] = dfc['Ascore']
+dfc.loc[:,'CscoreCo'] = dfc['Cscore']
+dfc.loc[:,'ImpulsiveCo'] = dfc['Impulsive']
+dfc.loc[:,'SSCo'] = dfc['SS']
+
+df['Gender'].replace(0.48246, 1)
+#df['Gender'] = df['Gender'].map({0.48246: 1, -0.48246: 0})
+print(df.Gender)
+
+#for ind, column in enumerate(dfc.columns):
+    #print(ind, column)
+
+#normalizar:
+for c in dfc.columns[6:11]:
+    if (dfc[c].dtypes == "int64" or dfc[c].dtypes == "float64") and c != "codigo_ocorrencia":
+        dfc[c]=(dfc[c]-0) / 60
+print("Atributos numéricos normalizados")
+
+for c in dfc.columns[10:13]:
+    if (dfc[c].dtypes == "int64" or dfc[c].dtypes == "float64") and c != "codigo_ocorrencia":
+        dfc[c]=(dfc[c]-dfc[c].min()) / (dfc[c].max()-dfc[c].min())
+print("Atributos numéricos normalizados")
+
+#print(dfc.Nscore[:10])
+
+#Dicionário do banco
+
+
+
+
+dfc.to_csv("data/Normalizada.csv")
+
+
+print(Y)
+from imblearn.over_sampling import SMOTE
+from sklearn.model_selection import StratifiedKFold
+
+
+kfold = StratifiedKFold(n_splits=10,random_state=None)
+smote = SMOTE(ratio='minority')
+
+for train_index, test_index in kfold.split(X,Y):
+     x_os, y_os = smote.fit_sample(X[train_index],Y.iloc[train_index])
+     classificador.fit(x_os,y_os)

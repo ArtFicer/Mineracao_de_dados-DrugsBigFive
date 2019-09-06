@@ -1,0 +1,4 @@
+Grande parte dos códigos foram digitados em IDEs distintas e em momentos distintos de acordo
+com a necessidade de se extrair alguma informação da base ou a manipular. 
+Infelizmente por uma má organização e utilização de vários dispositivos distintos os códigos 
+estão em arquivos separados.
